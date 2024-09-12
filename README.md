@@ -1,3 +1,3 @@
 #Katlego Monama 
 ##Creative 
-###Digital WebApp Developer!
+###Digital WebApp Developer & Data analyst!
