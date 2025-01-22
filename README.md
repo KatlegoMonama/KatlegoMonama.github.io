@@ -83,14 +83,7 @@ Check out more projects [here](#).
 
 ---
 
-## **📞 Let's Connect**  
 
-Feel free to reach out for collaborations, mentoring, or just to say hello!  
-
-- **Email:** [katlego.monama@example.com](mailto:katlego.monama@example.com)  
-- **LinkedIn:** [linkedin.com/in/katlego-monama](https://linkedin.com/in/katlego-monama)  
-- **GitHub:** [github.com/katlegomonama](https://github.com/katlegomonama)  
-- **Grub n Chill Contact:** [info@grubnchill.co.za](mailto:info@grubnchill.co.za)  
 
 ---
 
