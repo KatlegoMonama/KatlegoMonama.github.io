@@ -12,7 +12,7 @@ Here's an updated **GitHub README** template that includes your recent project, 
 
 ## **👋 About Me**  
 
-Hi, I'm **Katlego Monama**, a self-taught **Full Stack Developer** with over 15 years of experience. I specialize in creating robust and scalable web applications while keeping up with the latest advancements in technology. My expertise lies in:  
+Hi, I'm **Katlego Monama**, a self-taught **Software Engineer** with over 15 years of experience. I specialize in creating robust and scalable web applications while keeping up with the latest advancements in technology. My expertise lies in:  
 
 - **Frontend Development:** HTML, CSS, JavaScript, React  
 - **Backend Development:** Python (Flask/Django), PHP, SQL  
