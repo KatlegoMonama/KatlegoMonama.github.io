@@ -92,9 +92,10 @@ Would you like additional features or a more specific style for this README?
 ## 📞 **Contact**
 - **Name:** Katlego Monama
 - **Phone:** [+27683503416](tel:+27683503416)
-- **Email:** [Katlego@dagongap.com](mailto:Katlego@dagongap.com)  
+- **Email:** [Katlegokevinmonama@gmail.com](mailto:Katlegokevinmonama@gmail.com)
+- **Email:** [kevinmonama24@gmail.com](mailto:kevinmonama24@gmail.com)   
 - **LinkedIn:** [linkedin.com/in/yourname](https://linkedin.com/in/katlego-monama)  
-- **Portfolio:** [GrubnChill.co.za](https://grubnchill.com)
+- **Portfolio:** [Zynithium.Kesug.com](https://Zynithium.Kesug.com)
 
 ---
 
