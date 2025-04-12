@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Grub n Chill</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <a href="index.html">Grub n Chill</a>
+            </div>
+            
+            <div class="navbar-search">
+                <form action="#">
+                    <input type="text" placeholder="Search menu...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            
+            <ul class="navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="navbar-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="menu-hero-content">
+            <h1>Our Delicious Menu</h1>
+            <p>All items made fresh to order with premium ingredients</p>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section class="menu-categories">
+        <div class="container">
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="burgers">Burgers</button>
+                <button class="tab-btn" data-category="chicken">Chicken</button>
+                <button class="tab-btn" data-category="sides">Sides</button>
+                <button class="tab-btn" data-category="drinks">Drinks</button>
+                <button class="tab-btn" data-category="desserts">Desserts</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Items -->
+    <section class="menu-items">
+        <div class="container">
+            <!-- Burgers Category (default visible) -->
+            <div class="menu-category active" id="burgers">
+                <h2 class="category-title">Burgers</h2>
+                <p class="category-description">All burgers served with fries and a drink. Upgrade to sweet potato fries for $1.50</p>
+                
+                <div class="menu-grid">
+                    <!-- Item 1 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" alt="Classic Burger">
+                            <span class="item-price">$9.99</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Classic Chill Burger</h3>
+                            <p>Beef patty, American cheese, lettuce, tomato, onion, pickles, special sauce</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b" alt="Bacon Burger">
+                            <span class="item-price">$11.99</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Bacon Beast</h3>
+                            <p>Double beef, cheddar, crispy bacon, caramelized onions, BBQ sauce</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1603064752734-4c48eff53d05" alt="Mushroom Swiss">
+                            <span class="item-price">$10.99</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Mushroom Swiss</h3>
+                            <p>Beef patty, Swiss cheese, sautéed mushrooms, garlic aioli</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90" alt="Spicy Burger">
+                            <span class="item-price">$10.49</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Spicy Southwest</h3>
+                            <p>Beef patty, pepper jack, jalapeños, chipotle mayo, avocado</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 5 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1561758033-7e924f619b47" alt="Veggie Burger">
+                            <span class="item-price">$9.49</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Veggie Delight</h3>
+                            <p>House-made veggie patty, Swiss cheese, avocado, sprouts, tahini sauce</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 6 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086" alt="Double Burger">
+                            <span class="item-price">$12.99</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Double Trouble</h3>
+                            <p>Two beef patties, double cheese, bacon, special sauce</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chicken Category (hidden by default) -->
+            <div class="menu-category" id="chicken">
+                <h2 class="category-title">Chicken</h2>
+                <p class="category-description">All chicken sandwiches served with fries and a drink</p>
+                
+                <div class="menu-grid">
+                    <!-- Item 1 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1606755456206-b25206cde27e" alt="Classic Chicken">
+                            <span class="item-price">$8.99</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Classic Chicken</h3>
+                            <p>Crispy chicken breast, lettuce, tomato, mayo</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143" alt="Spicy Chicken">
+                            <span class="item-price">$9.49</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Spicy Chicken</h3>
+                            <p>Spicy crispy chicken, pepper jack, lettuce, chipotle mayo</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b" alt="Chicken Bacon">
+                            <span class="item-price">$10.99</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Chicken Bacon Ranch</h3>
+                            <p>Grilled chicken, bacon, Swiss, ranch, tomato</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7" alt="Chicken Tenders">
+                            <span class="item-price">$8.49</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Chicken Tenders</h3>
+                            <p>5-piece tenders with your choice of sauce</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sides Category (hidden by default) -->
+            <div class="menu-category" id="sides">
+                <h2 class="category-title">Sides</h2>
+                <p class="category-description">Perfect companions to your meal</p>
+                
+                <div class="menu-grid">
+                    <!-- Item 1 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5" alt="French Fries">
+                            <span class="item-price">$3.99</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Classic Fries</h3>
+                            <p>Golden crispy fries with sea salt</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1576107232684-1279f390859f" alt="Sweet Potato Fries">
+                            <span class="item-price">$4.99</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Sweet Potato Fries</h3>
+                            <p>With cinnamon sugar dusting</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1529563021893-cc83c992d00d" alt="Onion Rings">
+                            <span class="item-price">$4.49</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Onion Rings</h3>
+                            <p>Crispy beer-battered rings</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655" alt="Mozzarella Sticks">
+                            <span class="item-price">$5.49</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Mozzarella Sticks</h3>
+                            <p>6-piece with marinara sauce</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drinks Category (hidden by default) -->
+            <div class="menu-category" id="drinks">
+                <h2 class="category-title">Drinks</h2>
+                <p class="category-description">Refreshing beverages to quench your thirst</p>
+                
+                <div class="menu-grid">
+                    <!-- Item 1 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1551029506-0807df4e2031" alt="Fountain Drinks">
+                            <span class="item-price">$2.49</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Fountain Drinks</h3>
+                            <p>Coke, Diet Coke, Sprite, Dr. Pepper, Fanta, Lemonade</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd" alt="Iced Tea">
+                            <span class="item-price">$2.49</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Iced Tea</h3>
+                            <p>Sweetened or unsweetened</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1437957146754-f6377debe171" alt="Milkshakes">
+                            <span class="item-price">$4.99</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Milkshakes</h3>
+                            <p>Vanilla, Chocolate, Strawberry, Oreo</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e" alt="Craft Beer">
+                            <span class="item-price">$5.99</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Craft Beer</h3>
+                            <p>Selection of local craft beers (must be 21+)</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Desserts Category (hidden by default) -->
+            <div class="menu-category" id="desserts">
+                <h2 class="category-title">Desserts</h2>
+                <p class="category-description">Sweet treats to end your meal</p>
+                
+                <div class="menu-grid">
+                    <!-- Item 1 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb" alt="Chocolate Cake">
+                            <span class="item-price">$5.99</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Chocolate Lava Cake</h3>
+                            <p>Warm chocolate cake with a molten center, served with vanilla ice cream</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f" alt="Apple Pie">
+                            <span class="item-price">$4.99</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Apple Pie</h3>
+                            <p>Classic apple pie with cinnamon and a flaky crust</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950" alt="Ice Cream Sundae">
+                            <span class="item-price">$4.49</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Ice Cream Sundae</h3>
+                            <p>Vanilla ice cream with chocolate sauce, whipped cream, and a cherry</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="menu-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1627834377411-8da5f4f09de8" alt="Churros">
+                            <span class="item-price">$4.99</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Churros</h3>
+                            <p>4-piece with chocolate dipping sauce</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary">Add to Order</button>
+                                <button class="btn btn-outline">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Grub n Chill</h3>
+                <p>Delicious fast food for all ages. Quality ingredients, amazing flavors, and a chill atmosphere.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Franchising</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Information</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Nutrition Info</a></li>
+                    <li><a href="#">Allergen Info</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Food Street, Flavortown</li>
+                    <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                    <li><i class="fas fa-envelope"></i> info@grubnchill.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Sun: 10AM - 11PM</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Grub n Chill. All Rights Reserved.</p>
+            <div class="footer-payments">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fab fa-cc-apple-pay"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>

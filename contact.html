@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Grub n Chill</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <a href="index.html">Grub n Chill</a>
+            </div>
+            
+            <div class="navbar-search">
+                <form action="#">
+                    <input type="text" placeholder="Search menu...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            
+            <ul class="navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            
+            <div class="navbar-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="contact-hero-content">
+            <h1>Get In Touch</h1>
+            <p>We'd love to hear from you - questions, feedback, or just to say hello!</p>
+        </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="contact-methods">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>123 Food Street<br>Flavortown, FT 12345</p>
+                    <a href="#map" class="btn btn-outline">View Map</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>Main: (555) 123-4567<br>Catering: (555) 123-4568</p>
+                    <a href="tel:5551234567" class="btn btn-outline">Call Now</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>General: info@grubnchill.com<br>Support: help@grubnchill.com</p>
+                    <a href="#contact-form" class="btn btn-outline">Send Message</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Hours</h3>
+                    <p>Mon-Fri: 10AM - 10PM<br>Sat-Sun: 9AM - 11PM</p>
+                    <a href="#hours" class="btn btn-outline">Full Hours</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form and Map -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-form" id="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form id="messageForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="catering">Catering Request</option>
+                                <option value="employment">Employment</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="contact-map" id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215373510509!2d-73.9878449241646!3d40.75798597138928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1689872227591!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours Section -->
+    <section class="hours-section" id="hours">
+        <div class="container">
+            <h2>Our Hours</h2>
+            <p class="section-subtitle">Come visit us or place your order during these times</p>
+            
+            <div class="hours-grid">
+                <div class="hours-card">
+                    <h3>Restaurant Hours</h3>
+                    <ul class="hours-list">
+                        <li>
+                            <span>Monday - Friday</span>
+                            <span>10:00 AM - 10:00 PM</span>
+                        </li>
+                        <li>
+                            <span>Saturday</span>
+                            <span>9:00 AM - 11:00 PM</span>
+                        </li>
+                        <li>
+                            <span>Sunday</span>
+                            <span>9:00 AM - 11:00 PM</span>
+                        </li>
+                        <li>
+                            <span>Holidays</span>
+                            <span>10:00 AM - 8:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="hours-card">
+                    <h3>Delivery Hours</h3>
+                    <ul class="hours-list">
+                        <li>
+                            <span>Monday - Thursday</span>
+                            <span>11:00 AM - 9:30 PM</span>
+                        </li>
+                        <li>
+                            <span>Friday</span>
+                            <span>11:00 AM - 10:00 PM</span>
+                        </li>
+                        <li>
+                            <span>Saturday</span>
+                            <span>11:00 AM - 10:30 PM</span>
+                        </li>
+                        <li>
+                            <span>Sunday</span>
+                            <span>11:00 AM - 9:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="hours-card">
+                    <h3>Holiday Closures</h3>
+                    <p>We're closed on the following holidays to give our staff time with their families:</p>
+                    <ul class="holidays-list">
+                        <li><i class="fas fa-check"></i> New Year's Day</li>
+                        <li><i class="fas fa-check"></i> Thanksgiving Day</li>
+                        <li><i class="fas fa-check"></i> Christmas Day</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="contact-faq">
+        <div class="container">
+            <h2>Contact FAQs</h2>
+            <p class="section-subtitle">Quick answers to common questions</p>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> How quickly can I expect a response to my message?</h3>
+                    <p>We typically respond to all inquiries within 24 hours during business days. For catering requests, we aim to respond within 2 business hours during our operating hours.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Do you take reservations?</h3>
+                    <p>We operate on a first-come, first-served basis for parties under 8 people. For larger groups, please contact us in advance and we'll do our best to accommodate you.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Where can I park when visiting?</h3>
+                    <p>We have limited parking behind the restaurant, plus 2-hour street parking is available on Food Street and surrounding areas. A public parking garage is located one block away on Flavor Ave.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Do you have gift cards available?</h3>
+                    <p>Yes! Gift cards can be purchased in-store or online through our website. They never expire and can be used for both food and merchandise.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Are you wheelchair accessible?</h3>
+                    <p>Absolutely. Our restaurant is fully wheelchair accessible with ramps at all entrances and accessible restrooms. Please let us know if you need any special accommodations.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Can I host a private event at Grub n Chill?</h3>
+                    <p>We'd love to host your event! We offer full restaurant buyouts for private events after regular business hours. Contact our events team for more information and pricing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="contact-cta">
+        <div class="container">
+            <h2>Still Have Questions?</h2>
+            <p>Our team is happy to help with any additional questions you may have.</p>
+            <div class="cta-buttons">
+                <a href="tel:5551234567" class="btn btn-primary">
+                    <i class="fas fa-phone-alt"></i> Call Us Now
+                </a>
+                <a href="mailto:info@grubnchill.com" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Email Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Grub n Chill</h3>
+                <p>Delicious fast food for all ages. Quality ingredients, amazing flavors, and a chill atmosphere.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Franchising</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Information</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Nutrition Info</a></li>
+                    <li><a href="#">Allergen Info</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Food Street, Flavortown</li>
+                    <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                    <li><i class="fas fa-envelope"></i> info@grubnchill.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Sun: 10AM - 11PM</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Grub n Chill. All Rights Reserved.</p>
+            <div class="footer-payments">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fab fa-cc-apple-pay"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>

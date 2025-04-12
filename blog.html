@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Grub n Chill</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <a href="index.html">Grub n Chill</a>
+            </div>
+            
+            <div class="navbar-search">
+                <form action="#">
+                    <input type="text" placeholder="Search blog...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            
+            <ul class="navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="navbar-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="blog-hero-content">
+            <h1>The Grub n Chill Blog</h1>
+            <p>Food stories, recipes, and behind-the-scenes from our kitchen</p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="blog-content">
+        <div class="container">
+            <div class="blog-wrapper">
+                <!-- Main Content -->
+                <main class="blog-posts">
+                    <!-- Featured Post -->
+                    <article class="blog-post featured">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947" alt="Burger Cooking Process">
+                            <div class="post-category">Featured</div>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class="far fa-calendar"></i> June 15, 2023</span>
+                                <span class="post-author"><i class="far fa-user"></i> Chef Jamie Smith</span>
+                            </div>
+                            <h2><a href="single-post.html">The Art of Crafting the Perfect Burger</a></h2>
+                            <p class="post-excerpt">Join our head chef as he breaks down the science and technique behind our signature burgers, from meat selection to the perfect sear.</p>
+                            <a href="single-post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <!-- Regular Posts -->
+                    <article class="blog-post">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655" alt="Mozzarella Sticks">
+                            <div class="post-category">Appetizers</div>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class="far fa-calendar"></i> June 8, 2023</span>
+                                <span class="post-author"><i class="far fa-user"></i> Maria Garcia</span>
+                            </div>
+                            <h2><a href="single-post.html">Homemade Mozzarella Sticks: Our Secret Recipe</a></h2>
+                            <p class="post-excerpt">We're sharing our famous mozzarella stick recipe that keeps customers coming back for more. Plus tips for perfect frying at home.</p>
+                            <a href="single-post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-post">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1606755456206-b25206cde27e" alt="Chicken Sandwich">
+                            <div class="post-category">Chicken</div>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class="far fa-calendar"></i> June 1, 2023</span>
+                                <span class="post-author"><i class="far fa-user"></i> Alex Johnson</span>
+                            </div>
+                            <h2><a href="single-post.html">Spicy vs. Crispy: The Great Chicken Sandwich Debate</a></h2>
+                            <p class="post-excerpt">Our grill masters weigh in on the eternal chicken sandwich debate with taste tests, customer polls, and their professional opinions.</p>
+                            <a href="single-post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-post">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" alt="Restaurant Team">
+                            <div class="post-category">Behind the Scenes</div>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class="far fa-calendar"></i> May 24, 2023</span>
+                                <span class="post-author"><i class="far fa-user"></i> Taylor Wilson</span>
+                            </div>
+                            <h2><a href="single-post.html">A Day in the Life at Grub n Chill</a></h2>
+                            <p class="post-excerpt">Follow our team through a typical busy Saturday - from morning prep to the last customer. See what really goes into running a fast food joint.</p>
+                            <a href="single-post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-post">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1561758033-7e924f619b47" alt="Veggie Burger">
+                            <div class="post-category">Vegetarian</div>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class="far fa-calendar"></i> May 15, 2023</span>
+                                <span class="post-author"><i class="far fa-user"></i> Chef Jamie Smith</span>
+                            </div>
+                            <h2><a href="single-post.html">Plant-Based Perfection: Developing Our Veggie Burger</a></h2>
+                            <p class="post-excerpt">The 6-month journey to create a veggie burger that even meat lovers crave. Testing ingredients, textures, and flavors to get it just right.</p>
+                            <a href="single-post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-post">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b" alt="Chicken Bacon Ranch">
+                            <div class="post-category">Menu Updates</div>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class="far fa-calendar"></i> May 5, 2023</span>
+                                <span class="post-author"><i class="far fa-user"></i> Maria Garcia</span>
+                            </div>
+                            <h2><a href="single-post.html">Summer Menu Preview: What's New at Grub n Chill</a></h2>
+                            <p class="post-excerpt">Get a sneak peek at our seasonal summer offerings launching next week, including three new sandwiches and two refreshing drinks.</p>
+                            <a href="single-post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <!-- Pagination -->
+                    <div class="blog-pagination">
+                        <a href="#" class="page-numbers prev"><i class="fas fa-chevron-left"></i> Previous</a>
+                        <a href="#" class="page-numbers">1</a>
+                        <a href="#" class="page-numbers current">2</a>
+                        <a href="#" class="page-numbers">3</a>
+                        <a href="#" class="page-numbers">4</a>
+                        <a href="#" class="page-numbers next">Next <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </main>
+                
+                <!-- Sidebar -->
+                <aside class="blog-sidebar">
+                    <!-- About Widget -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">About Our Blog</h3>
+                        <div class="widget-content">
+                            <p>Welcome to the Grub n Chill blog, where we share our passion for great food, behind-the-scenes stories, and tips you can use at home.</p>
+                            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5" alt="Restaurant Interior" class="widget-image">
+                        </div>
+                    </div>
+                    
+                    <!-- Categories Widget -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Categories</h3>
+                        <div class="widget-content">
+                            <ul class="categories-list">
+                                <li><a href="#">Behind the Scenes <span>(12)</span></a></li>
+                                <li><a href="#">Recipes <span>(8)</span></a></li>
+                                <li><a href="#">Menu Updates <span>(5)</span></a></li>
+                                <li><a href="#">Burgers <span>(15)</span></a></li>
+                                <li><a href="#">Chicken <span>(7)</span></a></li>
+                                <li><a href="#">Vegetarian <span>(4)</span></a></a></li>
+                                <li><a href="#">Appetizers <span>(6)</span></a></li>
+                                <li><a href="#">Desserts <span>(3)</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Popular Posts Widget -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Popular Posts</h3>
+                        <div class="widget-content">
+                            <div class="popular-post">
+                                <a href="single-post.html" class="popular-post-image">
+                                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" alt="Popular Post">
+                                </a>
+                                <div class="popular-post-content">
+                                    <h4><a href="single-post.html">Why Our Burgers Are Different</a></h4>
+                                    <span class="post-date">April 28, 2023</span>
+                                </div>
+                            </div>
+                            
+                            <div class="popular-post">
+                                <a href="single-post.html" class="popular-post-image">
+                                    <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5" alt="Popular Post">
+                                </a>
+                                <div class="popular-post-content">
+                                    <h4><a href="single-post.html">The Science of Perfect Fries</a></h4>
+                                    <span class="post-date">April 15, 2023</span>
+                                </div>
+                            </div>
+                            
+                            <div class="popular-post">
+                                <a href="single-post.html" class="popular-post-image">
+                                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Popular Post">
+                                </a>
+                                <div class="popular-post-content">
+                                    <h4><a href="single-post.html">Meet Our Amazing Team</a></h4>
+                                    <span class="post-date">March 30, 2023</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Newsletter Widget -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Newsletter</h3>
+                        <div class="widget-content">
+                            <p>Subscribe to get our latest posts and special offers directly to your inbox.</p>
+                            <form class="newsletter-form">
+                                <input type="email" placeholder="Your email address" required>
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Widget -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Follow Us</h3>
+                        <div class="widget-content">
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="blog-cta">
+        <div class="container">
+            <h2>Have a Story Idea or Question?</h2>
+            <p>We're always looking for new topics to cover that our readers will love.</p>
+            <a href="contact.html" class="btn btn-primary">Contact Our Blog Team</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Grub n Chill</h3>
+                <p>Delicious fast food for all ages. Quality ingredients, amazing flavors, and a chill atmosphere.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Information</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Nutrition Info</a></li>
+                    <li><a href="#">Allergen Info</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Food Street, Flavortown</li>
+                    <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                    <li><i class="fas fa-envelope"></i> info@grubnchill.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Sun: 10AM - 11PM</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Grub n Chill. All Rights Reserved.</p>
+            <div class="footer-payments">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fab fa-cc-apple-pay"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="blog.js"></script>
+</body>
+</html>
