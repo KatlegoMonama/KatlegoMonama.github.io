@@ -3,176 +3,1396 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grub n Chill - Delicious Fast Food</title>
+    <title>Katlego Kevin Monama | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3a86ff;
+            --secondary-color: #8338ec;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --warning-color: #ffc107;
+            --info-color: #17a2b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark-color);
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: white;
+            margin-top: -80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #2a75e6;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            bottom: -10px;
+            left: 25%;
+        }
+        
+        /* Business Section */
+        .business-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .business-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .business-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .business-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .business-content {
+            padding: 1.5rem;
+        }
+        
+        .business-content h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .business-content p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        /* Dev Code Section */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-category h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .skill-item {
+            margin-bottom: 1rem;
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-bar {
+            height: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 5px;
+        }
+        
+        /* Books Section */
+        .books-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .book-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .book-cover {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .book-info {
+            padding: 1.5rem;
+        }
+        
+        .book-info h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .book-info p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .book-price {
+            font-weight: 700;
+            color: var(--success-color);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        /* Music Section */
+        .music-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .music-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .music-cover {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .music-info {
+            padding: 1.5rem;
+        }
+        
+        .music-info h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .music-info p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .audio-player {
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        /* Video Section */
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .video-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .video-thumbnail:hover img {
+            transform: scale(1.1);
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .play-button i {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-left: 5px;
+        }
+        
+        .video-info {
+            padding: 1.5rem;
+        }
+        
+        .video-info h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .video-info p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        /* About Me Section */
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-img {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .contact-text h3 {
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-text p, .contact-text a {
+            color: #666;
+            text-decoration: none;
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 2px;
+            background-color: var(--primary-color);
+            bottom: -5px;
+            left: 0;
+        }
+        
+        .footer-column p {
+            margin-bottom: 1rem;
+            color: #adb5bd;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-top: 1rem;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-family: inherit;
+        }
+        
+        .newsletter-btn {
+            padding: 0 1.2rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .newsletter-btn:hover {
+            background-color: #2a75e6;
+        }
+        
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid #495057;
+            text-align: center;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 800px;
+            width: 90%;
+            position: relative;
+            animation: modalopen 0.5s;
+        }
+        
+        @keyframes modalopen {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            color: #666;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: var(--danger-color);
+        }
+        
+        /* Payment Modal */
+        .payment-options {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .payment-btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .payment-btn.paypal {
+            background-color: #0070ba;
+            color: white;
+        }
+        
+        .payment-btn.kdp {
+            background-color: #ff9900;
+            color: white;
+        }
+        
+        .payment-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                clip-path: circle(0px at 90% -10%);
+                transition: all 0.5s ease-out;
+                pointer-events: none;
+            }
+            
+            .nav-links.active {
+                clip-path: circle(1000px at 90% -10%);
+                pointer-events: all;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hamburger.active div:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            
+            .hamburger.active div:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active div:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .about-container {
+                flex-direction: column;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .payment-options {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <div class="navbar-brand">
-                <a href="#">Grub n Chill</a>
-            </div>
-            
-            <div class="navbar-search">
-                <form action="#">
-                    <input type="text" placeholder="Search menu...">
-                    <button type="submit"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
-            
-            <ul class="navbar-nav">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="menu.html" >Menu</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">Katlego Monama</a>
+            <ul class="nav-links">
+                <li><a href="#business">Business</a></li>
+                <li><a href="#dev">Dev Code</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#music">Music</a></li>
+                <li><a href="#beats">Beats</a></li>
+                <li><a href="#video">Video</a></li>
+                <li><a href="#about">Me</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            
-            <div class="navbar-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Delicious Fast Food Made Fresh</h1>
-            <p>Order online or visit our store for the best burgers, fries, and more!</p>
+            <h1>Katlego Kevin Monama</h1>
+            <p>Business Analyst | Developer | Author | Creative</p>
             <div class="hero-buttons">
-                <a href="#" class="btn btn-primary">Order Now</a>
-                <a href="#" class="btn btn-secondary">View Menu</a>
+                <a href="#contact" class="btn">Get In Touch</a>
+                <a href="#about" class="btn btn-outline">Learn More</a>
             </div>
         </div>
     </section>
 
-    <!-- Featured Section -->
-    <section class="featured">
-        <h2>Our Specialties</h2>
-        <div class="featured-container">
-            <div class="featured-card">
-                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" alt="Juicy Burger">
-                <h3>Signature Burgers</h3>
-                <p>Handcrafted with premium beef and fresh ingredients</p>
+    <!-- Business Section -->
+    <section id="business">
+        <div class="section-title">
+            <h2>Business Ventures</h2>
+        </div>
+        <div class="business-grid">
+            <div class="business-card">
+                <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Business Analytics" class="business-img">
+                <div class="business-content">
+                    <h3>Business Analytics Consulting</h3>
+                    <p>Providing data-driven insights to optimize business operations and maximize profitability through advanced quantitative techniques.</p>
+                    <a href="#" class="btn">View Case Studies</a>
+                </div>
             </div>
-            <div class="featured-card">
-                <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5" alt="Crispy Fries">
-                <h3>Crispy Fries</h3>
-                <p>Golden perfection with just the right amount of crunch</p>
+            <div class="business-card">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="E-commerce" class="business-img">
+                <div class="business-content">
+                    <h3>E-commerce Solutions</h3>
+                    <p>Developed and scaled multiple e-commerce platforms with optimized conversion funnels and marketing strategies.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
             </div>
-            <div class="featured-card">
-                <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd" alt="Refreshing Drinks">
-                <h3>Refreshing Drinks</h3>
-                <p>Cool down with our selection of beverages</p>
-            </div>
-            <div class="featured-card">
-                <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950" alt="Desserts">
-                <h3>Sweet Treats</h3>
-                <p>Indulge in our delicious dessert options</p>
+            <div class="business-card">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Startup" class="business-img">
+                <div class="business-content">
+                    <h3>Tech Startup Incubation</h3>
+                    <p>Founded and mentored several tech startups from ideation to market entry and growth stages.</p>
+                    <a href="#" class="btn">View Portfolio</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about">
+    <!-- Dev Code Section -->
+    <section id="dev">
+        <div class="section-title">
+            <h2>Development & Code</h2>
+        </div>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Web Development</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>HTML/CSS</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>JavaScript</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>React</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Backend Development</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>PHP</span>
+                        <span>88%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 88%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>SQL</span>
+                        <span>92%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 92%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Node.js</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Other Skills</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Email Development</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Game Development</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Marketing Automation</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    <section id="books">
+        <div class="section-title">
+            <h2>Books</h2>
+        </div>
+        <div class="books-container">
+            <div class="book-card">
+                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Book Cover" class="book-cover">
+                <div class="book-info">
+                    <h3>Data-Driven Decisions</h3>
+                    <p>A practical guide to business analytics for entrepreneurs and managers.</p>
+                    <span class="book-price">$14.99</span>
+                    <button class="btn purchase-btn" data-product="Data-Driven Decisions">Purchase</button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Book Cover" class="book-cover">
+                <div class="book-info">
+                    <h3>The Coding Mindset</h3>
+                    <p>Developing problem-solving skills for modern web development.</p>
+                    <span class="book-price">$12.99</span>
+                    <button class="btn purchase-btn" data-product="The Coding Mindset">Purchase</button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Book Cover" class="book-cover">
+                <div class="book-info">
+                    <h3>Recommended Reads</h3>
+                    <p>Curated collection of books that shaped my thinking and career.</p>
+                    <a href="#" class="btn">View List</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music">
+        <div class="section-title">
+            <h2>Music Projects</h2>
+        </div>
+        <div class="music-container">
+            <div class="music-card">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Album Cover" class="music-cover">
+                <div class="music-info">
+                    <h3>Urban Echoes</h3>
+                    <p>My latest EP blending electronic and soul influences.</p>
+                    <audio controls class="audio-player">
+                        <source src="#" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <button class="btn purchase-btn" data-product="Urban Echoes EP">Purchase</button>
+                </div>
+            </div>
+            <div class="music-card">
+                <img src="https://images.unsplash.com/photo-1496293455970-f8581aae0e3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Album Cover" class="music-cover">
+                <div class="music-info">
+                    <h3>Current Playlist</h3>
+                    <p>Songs I'm currently listening to and recommend.</p>
+                    <audio controls class="audio-player">
+                        <source src="#" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <a href="#" class="btn">View Playlist</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beats Section -->
+    <section id="beats">
+        <div class="section-title">
+            <h2>Beats & Instrumentals</h2>
+        </div>
+        <div class="music-container">
+            <div class="music-card">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Beat Cover" class="music-cover">
+                <div class="music-info">
+                    <h3>Hip-Hop Collection</h3>
+                    <p>Premium hip-hop beats available for licensing.</p>
+                    <audio controls class="audio-player">
+                        <source src="#" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <button class="btn purchase-btn" data-product="Hip-Hop Beats">Purchase</button>
+                </div>
+            </div>
+            <div class="music-card">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Beat Cover" class="music-cover">
+                <div class="music-info">
+                    <h3>Electronic Pack</h3>
+                    <p>EDM and electronic instrumentals for your projects.</p>
+                    <audio controls class="audio-player">
+                        <source src="#" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <button class="btn purchase-btn" data-product="Electronic Beats">Purchase</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video">
+        <div class="section-title">
+            <h2>Video Projects</h2>
+        </div>
+        <div class="video-container">
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <img src="https://images.unsplash.com/photo-1558008258-3256797b43f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>Business Analytics Tutorials</h3>
+                    <p>Educational series on data analysis and business intelligence techniques & leveraging AI tools.</p>
+                    <a href="#" class="btn">Watch Series</a>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>Coding Walkthroughs</h3>
+                    <p>Live coding sessions and project breakdowns.</p>
+                    <a href="#" class="btn">View Channel</a>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>Music Videos</h3>
+                    <p>Visual creations to accompany my musical projects.</p>
+                    <a href="#" class="btn">Watch Playlist</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <div class="section-title">
+            <h2>About Me</h2>
+        </div>
         <div class="about-container">
-            <div class="about-content">
-                <h2>About Grub n Chill</h2>
-                <p>Founded in 2023, Grub n Chill is dedicated to serving high-quality fast food with a fun, relaxed atmosphere. We source our ingredients locally whenever possible and prepare everything fresh daily.</p>
-                <p>Our mission is to provide delicious food that brings people together, whether you're grabbing a quick bite or settling in for a chill meal with friends.</p>
-                <a href="#" class="btn btn-primary">Learn More</a>
+            <div class="about-img">
+                <img src="KatlegoMonamaPicture.png" alt="Katlego Monama">
             </div>
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5" alt="Restaurant Interior">
+            <div class="about-content">
+                <h3>Multidisciplinary Creator</h3>
+                <p>I'm Katlego Monama, a business analyst, developer, author, and creative based in South Africa. With over 10 years of experience across multiple disciplines, I bring a unique perspective to every project I undertake.</p>
+                <p>My approach combines analytical rigor with creative problem-solving, allowing me to develop innovative solutions that drive real business results while satisfying creative impulses.</p>
+                <p>When I'm not working on client projects, you can find me writing, producing music, or developing new digital products that bridge gaps between technology and creative expression.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-spotify"></i></a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="cta-content">
-            <h2>Ready to Grub?</h2>
-            <p>Download our app for exclusive deals and faster ordering!</p>
-            <div class="cta-buttons">
-                <a href="#" class="btn btn-app">
-                    <i class="fab fa-apple"></i>
-                    <span>Download on the<br><strong>App Store</strong></span>
-                </a>
-                <a href="#" class="btn btn-app">
-                    <i class="fab fa-google-play"></i>
-                    <span>Get it on<br><strong>Google Play</strong></span>
-                </a>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Email</h3>
+                        <a href="mailto:Kevinmonama24@gmail.com">Kevinmonama24@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Phone</h3>
+                        <a href="tel:+27683503416">+27 68 350 3416</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Location</h3>
+                        <p>Johannesburg, South Africa</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Grub n Chill</h3>
-                <p>Delicious fast food for all ages. Quality ingredients, amazing flavors, and a chill atmosphere.</p>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>About</h3>
+                <p>Katlego Monama is a multidisciplinary professional offering business analytics, development, and creative services.</p>
+                <div class="social-links">
                     <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            
-            <div class="footer-section">
+            <div class="footer-column">
                 <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Menu</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Franchising</a></li>
+                <ul class="footer-links">
+                    <li><a href="#business">Business</a></li>
+                    <li><a href="#dev">Dev Code</a></li>
+                    <li><a href="#books">Books</a></li>
+                    <li><a href="#music">Music</a></li>
+                    <li><a href="#beats">Beats</a></li>
+                    <li><a href="#video">Video</a></li>
                 </ul>
             </div>
-            
-            <div class="footer-section">
-                <h3>Information</h3>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Nutrition Info</a></li>
-                    <li><a href="#">Allergen Info</a></li>
-                    <li><a href="#">Gift Cards</a></li>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">Free Resources</a></li>
+                    <li><a href="#">Portfolio</a></li>
                 </ul>
             </div>
-            
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <ul class="footer-contact">
-                    <li><i class="fas fa-map-marker-alt"></i> 123 Food Street, Flavortown</li>
-                    <li><i class="fas fa-phone"></i> (555) 123-4567</li>
-                    <li><i class="fas fa-envelope"></i> info@grubnchill.com</li>
-                    <li><i class="fas fa-clock"></i> Mon-Sun: 10AM - 11PM</li>
-                </ul>
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get updates on new projects, releases, and articles.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email" class="newsletter-input" required>
+                    <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                </form>
             </div>
         </div>
-        
         <div class="footer-bottom">
-            <p>&copy; 2023 Grub n Chill. All Rights Reserved.</p>
-            <div class="footer-payments">
-                <i class="fab fa-cc-visa"></i>
-                <i class="fab fa-cc-mastercard"></i>
-                <i class="fab fa-cc-amex"></i>
-                <i class="fab fa-cc-paypal"></i>
-                <i class="fab fa-cc-apple-pay"></i>
-            </div>
+            <p>&copy; <span id="year"></span> Katlego Monama. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Purchase Modal -->
+    <div id="purchaseModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modalTitle">Purchase <span id="productName"></span></h2>
+            <p>Choose your preferred payment method:</p>
+            <div class="payment-options">
+                <button class="payment-btn paypal" id="paypalBtn"><i class="fab fa-paypal"></i> PayPal</button>
+                <button class="payment-btn kdp" id="kdpBtn"><i class="fab fa-amazon"></i> Amazon KDP</button>
+            </div>
+            <div id="paymentForm" style="display: none;">
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailAddress">Email Address</label>
+                        <input type="email" id="emailAddress" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentAmount">Amount ($)</label>
+                        <input type="number" id="paymentAmount" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn">Complete Purchase</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Sticky header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+        
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Purchase modal functionality
+        const purchaseButtons = document.querySelectorAll('.purchase-btn');
+        const modal = document.getElementById('purchaseModal');
+        const closeModal = document.querySelector('.close-modal');
+        const productName = document.getElementById('productName');
+        const paymentForm = document.getElementById('paymentForm');
+        const paypalBtn = document.getElementById('paypalBtn');
+        const kdpBtn = document.getElementById('kdpBtn');
+        
+        purchaseButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                modal.style.display = 'block';
+                productName.textContent = button.getAttribute('data-product');
+                paymentForm.style.display = 'none';
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+        
+        paypalBtn.addEventListener('click', () => {
+            paymentForm.style.display = 'block';
+            // In a real implementation, you would integrate PayPal SDK here
+        });
+        
+        kdpBtn.addEventListener('click', () => {
+            // Redirect to Amazon KDP page
+            window.open('https://www.amazon.com/Kindle-Direct-Publishing/b?ie=UTF8&node=133140011');
+        });
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real implementation, you would send the form data to a server
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+        
+        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real implementation, you would process the payment
+            alert('Payment processed successfully! Thank you for your purchase.');
+            modal.style.display = 'none';
+            this.reset();
+        });
+        
+        // Newsletter form
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+            // In a real implementation, you would subscribe the email to your newsletter service
+            alert('Thank you for subscribing to our newsletter!');
+            this.reset();
+        });
+        
+        // Video play button
+        document.querySelectorAll('.play-button').forEach(button => {
+            button.addEventListener('click', () => {
+                // In a real implementation, this would open a video player or modal
+                alert('Video playback would start here.');
+            });
+        });
+    </script>
 </body>
 </html>
