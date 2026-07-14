@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build:css": "cleancss -o assets/css/ultimate.min.css assets/css/ultimate.css",
+    "build:css": "cleancss -o assets/css/site.min.css assets/css/site.css",
     "build:js": "terser assets/js/ultimate.js -o assets/js/ultimate.min.js",
+    "optimize:images": "npx imagemin images/* --out-dir=images/optimized",
     "build": "npm run build:css && npm run build:js"
   },
   "devDependencies": {
