@@ -1,15 +1,15 @@
 {
-  "name": "katlego-portfolio",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "build:css": "cleancss -o assets/css/site.min.css assets/css/site.css",
-    "build:js": "terser assets/js/ultimate.js -o assets/js/ultimate.min.js",
-    "optimize:images": "npx imagemin images/* --out-dir=images/optimized",
-    "build": "npm run build:css && npm run build:js"
-  },
-  "devDependencies": {
-    "clean-css-cli": "^5.6.0",
-    "terser": "^5.17.0"
-  }
+    "name": "katlego-portfolio",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "build:css": "cleancss -o assets/css/site.min.css assets/css/site.css",
+        "build:js": "terser assets/js/ultimate.js -o assets/js/ultimate.min.js",
+        "optimize:images": "npx imagemin images/* --out-dir=images/optimized",
+        "build": "npm run build:css && npm run build:js"
+    },
+    "devDependencies": {
+        "clean-css-cli": "^5.6.0",
+        "terser": "^5.17.0"
+    }
 }
