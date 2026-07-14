@@ -1,0 +1,16 @@
+{
+  "jupyter.sendSelectionToInteractiveWindow": true,
+  "python.dataScience.sendSelectionToInteractiveWindow": true,
+  "jupyter.runStartupCommands": [
+    "import pandas as pd",
+    "import numpy as np",
+    "import matplotlib.pyplot as plt",
+    "import seaborn as sns",
+    "%matplotlib inline"
+  ],
+  "jupyter.askForKernelRestart": false,
+  "python.terminal.activateEnvironment": true,
+  "data-wrangler.enable": true,
+  "editor.formatOnSave": true,
+  "files.autoSave": "onFocusChange"
+}
