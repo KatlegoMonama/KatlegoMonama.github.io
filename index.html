@@ -3,1209 +3,461 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Katlego Kevin Monama — Data Analyst portfolio showcasing projects, skills, and contact information for hiring.">
-    <title>Katlego Kevin Monama — Data Analyst</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #3a86ff;
-            --secondary-color: #8338ec;
-            --dark-color: #212529;
-            --light-color: #f8f9fa;
-            --success-color: #28a745;
-            --danger-color: #dc3545;
-            --warning-color: #ffc107;
-            --info-color: #17a2b8;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
-            background-color: var(--light-color);
-            overflow-x: hidden;
-        }
-        
-        /* Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 1.5rem;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--primary-color);
-            transition: width 0.3s;
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        .hamburger {
-            display: none;
-            cursor: pointer;
-        }
-        
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: var(--dark-color);
-            margin: 5px;
-            transition: all 0.3s ease;
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 2rem;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            color: white;
-            margin-top: -80px;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-        
-        .btn:hover {
-            background-color: #2a75e6;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid white;
-            margin-left: 1rem;
-        }
-        
-        .btn-outline:hover {
-            background-color: white;
-            color: var(--primary-color);
-        }
-        
-        /* Sections */
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            display: inline-block;
-            position: relative;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            bottom: -10px;
-            left: 25%;
-        }
-        
-        /* Business Section */
-        .business-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .business-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .business-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .business-img {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-        }
-        
-        .business-content {
-            padding: 1.5rem;
-        }
-        
-        .business-content h3 {
-            margin-bottom: 0.5rem;
-        }
-        
-        .business-content p {
-            margin-bottom: 1rem;
-            color: #666;
-        }
-        
-        /* Dev Code Section */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-        
-        .skill-category {
-            flex: 1;
-            min-width: 300px;
-            background-color: white;
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .skill-category h3 {
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-        
-        .skill-item {
-            margin-bottom: 1rem;
-        }
-        
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-        }
-        
-        .skill-bar {
-            height: 10px;
-            background-color: #e9ecef;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        
-        .skill-progress {
-            height: 100%;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            border-radius: 5px;
-        }
-        
-        /* Books Section */
-        .books-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .book-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        
-        .book-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .book-cover {
-            height: 300px;
-            width: 100%;
-            object-fit: cover;
-        }
-        
-        .book-info {
-            padding: 1.5rem;
-        }
-        
-        .book-info h3 {
-            margin-bottom: 0.5rem;
-        }
-        
-        .book-info p {
-            margin-bottom: 1rem;
-            color: #666;
-        }
-        
-        .book-price {
-            font-weight: 700;
-            color: var(--success-color);
-            margin-bottom: 1rem;
-            display: block;
-        }
-        
-        /* Music Section */
-        .music-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .music-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .music-cover {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-        }
-        
-        .music-info {
-            padding: 1.5rem;
-        }
-        
-        .music-info h3 {
-            margin-bottom: 0.5rem;
-        }
-        
-        .music-info p {
-            margin-bottom: 1rem;
-            color: #666;
-        }
-        
-        .audio-player {
-            width: 100%;
-            margin-top: 1rem;
-        }
-        
-        /* Video Section */
-        .video-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .video-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .video-thumbnail {
-            position: relative;
-            height: 200px;
-            width: 100%;
-            overflow: hidden;
-        }
-        
-        .video-thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-        
-        .video-thumbnail:hover img {
-            transform: scale(1.1);
-        }
-        
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60px;
-            height: 60px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-        
-        .play-button i {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-left: 5px;
-        }
-        
-        .video-info {
-            padding: 1.5rem;
-        }
-        
-        .video-info h3 {
-            margin-bottom: 0.5rem;
-        }
-        
-        .video-info p {
-            margin-bottom: 1rem;
-            color: #666;
-        }
-        
-        /* About Me Section */
-        .about-container {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 3rem;
-        }
-        
-        .about-img {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .about-img img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .about-content {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .about-content h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-        
-        .about-content p {
-            margin-bottom: 1.5rem;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-3px);
-        }
-        
-        /* Contact Section */
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-        
-        .contact-text h3 {
-            margin-bottom: 0.3rem;
-        }
-        
-        .contact-text p, .contact-text a {
-            color: #666;
-            text-decoration: none;
-        }
-        
-        .contact-form {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
-            font-size: 1rem;
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            text-align: left;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 2px;
-            background-color: var(--primary-color);
-            bottom: -5px;
-            left: 0;
-        }
-        
-        .footer-column p {
-            margin-bottom: 1rem;
-            color: #adb5bd;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .footer-links a {
-            color: #adb5bd;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        .newsletter-form {
-            display: flex;
-            margin-top: 1rem;
-        }
-        
-        .newsletter-input {
-            flex: 1;
-            padding: 0.8rem;
-            border: none;
-            border-radius: 5px 0 0 5px;
-            font-family: inherit;
-        }
-        
-        .newsletter-btn {
-            padding: 0 1.2rem;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .newsletter-btn:hover {
-            background-color: #2a75e6;
-        }
-        
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 2rem auto 0;
-            padding-top: 2rem;
-            border-top: 1px solid #495057;
-            text-align: center;
-        }
-        
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 2000;
-            overflow-y: auto;
-        }
-        
-        .modal-content {
-            background-color: white;
-            margin: 5% auto;
-            padding: 2rem;
-            border-radius: 10px;
-            max-width: 800px;
-            width: 90%;
-            position: relative;
-            animation: modalopen 0.5s;
-        }
-        
-        @keyframes modalopen {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            font-size: 2rem;
-            color: #666;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-        
-        .close-modal:hover {
-            color: var(--danger-color);
-        }
-        
-        /* Payment Modal */
-        .payment-options {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .payment-btn {
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .payment-btn.paypal {
-            background-color: #0070ba;
-            color: white;
-        }
-        
-        .payment-btn.kdp {
-            background-color: #ff9900;
-            color: white;
-        }
-        
-        .payment-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 1rem;
-            }
-            
-            .nav-links {
-                position: absolute;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background-color: white;
-                flex-direction: column;
-                align-items: center;
-                padding: 2rem 0;
-                clip-path: circle(0px at 90% -10%);
-                transition: all 0.5s ease-out;
-                pointer-events: none;
-            }
-            
-            .nav-links.active {
-                clip-path: circle(1000px at 90% -10%);
-                pointer-events: all;
-            }
-            
-            .nav-links li {
-                margin: 1rem 0;
-            }
-            
-            .hamburger {
-                display: block;
-            }
-            
-            .hamburger.active div:nth-child(1) {
-                transform: rotate(-45deg) translate(-5px, 6px);
-            }
-            
-            .hamburger.active div:nth-child(2) {
-                opacity: 0;
-            }
-            
-            .hamburger.active div:nth-child(3) {
-                transform: rotate(45deg) translate(-5px, -6px);
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .about-container {
-                flex-direction: column;
-            }
-            
-            .btn-outline {
-                margin-left: 0;
-                margin-top: 1rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-            
-            .payment-options {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <title> Portfolio by MR MONAMA</title>
+    <link rel="stylesheet" href="styles.css">
+<!--
+
+TemplateMo 615 Amber Folio
+
+https://templatemo.com/tm-615-amber-folio
+
+-->
 </head>
 <body>
-    <!-- Navigation -->
-    <header>
-        <nav class="navbar">
-            <a href="#" class="logo">Katlego Monama</a>
-            <ul class="nav-links">
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#dev">Skills</a></li>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header id="header">
+        <nav>
+            <a href="#home" class="logo">
+                
+                MR MONAMA
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="resume.html">Resume</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <div></div>
-                <div></div>
-                <div></div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Katlego Kevin Monama — Data Analyst</h1>
-            <p>Turning data into insights and actionable strategies. Experienced in Python, SQL, and visualization tools.</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn">See Projects</a>
-                <a href="resume.html" class="btn btn-outline">Download Resume</a>
+    <section class="hero-section" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-shapes">
+            <div class="floating-accent accent-1"></div>
+            <div class="floating-accent accent-2"></div>
+            <div class="floating-accent accent-3"></div>
+        </div>
+        <div class="hero-content reveal">
+            <div class="profile_pic">
+                <img src="images/templatemo-about-artist.png"styles="width:100%; hieght:50%" alt="Photographer">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/katlegoMonama/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2C22 19.4 19.4 22 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2M7.6 4C5.61 4 4 5.61 4 7.6V16.4C4 18.39 5.61 20 7.6 20H16.4C18.39 20 20 18.39 20 16.4V7.6C20 5.61 18.39 4 16.4 4H7.6M17.25 5.5C17.94 5.5 18.5 6.06 18.5 6.75S17.94 8 17.25 8S16 7.44 16 6.75S16.56 5.5 17.25 5.5M12 7C14.76 7 17 9.24 17 12S14.76 17 12 17S7 14.76 7 12S9.24 7 12 7M12 9C10.34 9 9 10.34 9 12S10.34 15 12 15S15 13.66 15 12S13.66 9 12 9Z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/katlegoMonama/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 3C19.55 3 20.05 3.21 20.41 3.59C20.79 3.95 21 4.45 21 5V19C21 19.55 20.79 20.05 20.41 20.41C20.05 20.79 19.55 21 19 21H5C4.45 21 3.95 20.79 3.59 20.41C3.21 20.05 3 19.55 3 19V5C3 4.45 3.21 3.95 3.59 3.59C3.95 3.21 4.45 3 5 3H19M18.5 18.5V13.2C18.5 11.87 17.45 10.82 16.12 10.82C15.21 10.82 14.46 11.37 14.17 12.15V11H11.5V18.5H14.17V13.57C14.17 12.82 14.79 12.2 15.54 12.2C16.29 12.2 16.91 12.82 16.91 13.57V18.5H18.5M6.88 9.57C7.63 9.57 8.25 8.96 8.25 8.21C8.25 7.46 7.63 6.84 6.88 6.84C6.13 6.84 5.5 7.46 5.5 8.21C5.5 8.96 6.13 9.57 6.88 9.57M8.21 18.5V11H5.5V18.5H8.21Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <h1 class="hero-title">BI ANALYST</h1>
+            <a href="cv/Kevin_Katlego_Monama_CV-2026.pdf" styles="color:black;" class="cta-button"><p styles="text-align:center; padding:100px; text-decoration: none;" >
+                CV | RESUMME</p></a> <a href="#portfolio" class="cta-button">View My Work</a>
+            <p class="hero-subtitle">Portfolio</p>
+            
+            
+        </div>
+    </section>
+
+    <!-- Portfolio Section with Coverflow -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="section-header reveal">
+            <h2 class="section-title">END-TO-END PIPELINES</h2>
+            <p class="section-subtitle">Explore my latest Dashboards, Reports and Storytelling Insights.</p>
+        </div>
+        <section class="about-section" id="about">
+            <div class="about-container reveal">
+                <div class="about-image">
+                    <img src="images/marketing-3.png" alt="Photographer">
+                </div>
+                <div class="about-content">
+                    <h2>Mood-Flow Marketing Campaign Performance 2025</h2>
+                    <p> <a href="PDF.zip"class="cta-button"> Download </a> <a href=""class="cta-button" style=" background-color: blue; "> GITHUB</a> <a href="Mood Flow Marketing Campaign 2025.pdf"class="cta-button" style=" background-color:yellowgreen; "> SLIDE DECK</a><br> THE ORGANIZATION NEEDED TO ANSWER CRITICAL BUSINESS QUESTIONS
+
+                        Mood Flow invested heavily in multiple digital marketing channels (Instagram Ads, Google Ads, Facebook Ads, and Email Campaigns), but leadership lacked visibility into which campaigns generated the highest business value.
+                        <br>
+                        
+                        
+                        </p>BUSINESS QUESTIONS:
+                    <p>Which campaign generated the strongest ROI?</p>
+                    <p>Which channels produced the highest engagement and conversion efficiency?</p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number">#1</div>
+                            <div class="stat-label">Instagram</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">307 %</div>
+                            <div class="stat-label">* TOTAL ROI</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">11 %</div>
+                            <div class="stat-label">CTR</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="about-section" id="about">
+            <div class="about-container reveal">
+               
+                <div class="about-content">
+                    <h2>Ford Furgasin Engagement Retention 2025</h2>
+                    <p><a href="PDF.zip"class="cta-button"> Download </a> <a href=""class="cta-button" style=" background-color: blue; "> GITHUB </a> <a href="Ford Furgasin Engagement 2026.pdf"class="cta-button" style=" background-color:yellowgreen; "> SLIDE DECK</a><br>Ford Furagasin faces several strategic business problems impacting engagement retention and conversion efficiency.</p>
+                    <p>The company is experiencing a period of measurable user growth combined with unstable engagement quality.</p>
+                    <p>The platform is experiencing declining user engagement and retention, with limited understanding of user behavior patterns.</p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number">200</div>
+                            <div class="stat-label">Active Users</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">12 %</div>
+                            <div class="stat-label">Onboarding</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">16 %</div>
+                            <div class="stat-label">Churn</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/graph1.PNG" alt="Photographer">
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section class="about-section" id="about">
+            <div class="about-container reveal">
+                <div class="about-image">
+                    <img src="images/graph1.PNG" alt="Photographer">
+                </div>
+                <div class="about-content">
+                    <h2>Takealot 2022</h2>
+                    <p><a href=""class="cta-button"> Download </a> <a href=""class="cta-button" style=" background-color: blue; "> GITHUB </a> <a href="Ford Furgasin Engagement 2026.pdf"class="cta-button" style=" background-color:yellowgreen; "> SLIDE DECK</a><br>, I specialize in capturing the extraordinary in everyday moments. My journey began with a simple camera and an insatiable curiosity about the world around me.</p>
+                    <p>From the bustling streets of urban landscapes to the serene beauty of nature, I strive to tell stories through my lens. Each photograph is a carefully crafted piece of art, designed to evoke emotion and preserve memories that last a lifetime.</p>
+                    <p>My work has been featured in numerous galleries and publications worldwide, but my greatest satisfaction comes from creating images that resonate with people on a personal level.</p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number">607K</div>
+                            <div class="stat-label">Daily Active Users</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">56K</div>
+                            <div class="stat-label">AVG Daily Active Delivery</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3K</div>
+                            <div class="stat-label">Active Drivers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+        <div class="coverflow-wrapper">
+
+            <div class="coverflow-container" id="coverflowContainer">
+               
+                
+                <div class="coverflow-wrapper">
+                    <div class="coverflow-container" id="coverflowContainer">
+                        <!-- Portrait Photography -->
+                        <div class="coverflow-item" data-index="0">
+                            <img src="images/June 30 2026.png" alt="Portrait Photography" class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-category">30 Jan 2027</div>
+                                <h3 class="portfolio-title">Human Stories</h3>
+                                <p class="portfolio-description">Capturing authentic emotions and personalities</p>
+                            </div>
+                        </div>
+        
+                        <!-- Landscape Photography -->
+                        <div class="coverflow-item" data-index="1">
+                            <img src="images/July-30-2026.png" alt="Landscape Photography" class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-category">28 Feb 2027</div>
+                                <h3 class="portfolio-title">Nature's Canvas</h3>
+                                <p class="portfolio-description">Breathtaking vistas and natural wonders</p>
+                            </div>
+                        </div>
+        
+                        <!-- Street Photography -->
+                        <div class="coverflow-item" data-index="2">
+                            <img src="images/Aug-30-2026.png" alt="Street Photography" class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-category">30 March 2027</div>
+                                <h3 class="portfolio-title">Urban Life</h3>
+                                <p class="portfolio-description">Candid moments in city environments</p>
+                            </div>
+                        </div>
+        
+                        <!-- Architecture Photography -->
+                        <div class="coverflow-item" data-index="3">
+                            <img src="images/Sep-30-2026.png" alt="Architecture Photography" class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-category">30 April 2027</div>
+                                <h3 class="portfolio-title">Structural Beauty</h3>
+                                <p class="portfolio-description">Modern lines and timeless designs</p>
+                            </div>
+                        </div>
+        
+                        <!-- Fashion Photography -->
+                        <div class="coverflow-item" data-index="4">
+                            <img src="images/Oct-30-2026.png" alt="Fashion Photography" class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-category">30 JULY 2026</div>
+                                <a href=""><h3 class="portfolio-title">Official Launch</h3></a>
+                               <p class="portfolio-description">March Breakout</p>
+                            </div>
+                        </div>
+        
+                        <!-- Wildlife Photography -->
+                        <div class="coverflow-item" data-index="5">
+                            <img src="images/June 30 2026.png" alt="Wildlife Photography" class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-category">30 AUG 2026</div>
+                                <h3 class="portfolio-title">Correlation</h3>
+                                <p class="portfolio-description">GOLD VS USD</p>
+                            </div>
+                        </div>
+        
+                        <!-- Black & White Photography -->
+                        <div class="coverflow-item" data-index="6">
+                            <img src="images/July-30-2026.png" alt="Black and White Photography" class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-category">30 SEP 2026</div>
+                                <h3 class="portfolio-title">WORST</h3>
+                                <p class="portfolio-description">Good VS Bad Trade</p>
+                            </div>
+                        </div>
+        
+                        <!-- Event Photography -->
+                        <div class="coverflow-item" data-index="7">
+                            <img src="images/Aug-30-2026.png" alt="Event Photography" class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-category">30 OCT 2026</div>
+                                <h3 class="portfolio-title">Rise Again</h3>
+                                <p class="portfolio-description">Weddings and celebrations</p>
+                            </div>
+                        </div>
+        
+                        <!-- Abstract Photography -->
+                        <div class="coverflow-item" data-index="8">
+                            <img src="images/Sep-30-2026.png" alt="Abstract Photography" class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-category">30 Nov 2026</div>
+                                <h3 class="portfolio-title">Creative Vision</h3>
+                                <p class="portfolio-description">Artistic and experimental works</p>
+                            </div>
+                        </div>
+                    </div>
+
+               
+  
+            </div>
+
+            <!-- Navigation Controls -->
+            <div class="coverflow-controls" style="display: none; ">
+                <button class="control-btn" id="prevBtn">‹</button>
+                <button class="control-btn" id="playPauseBtn">▶</button>
+                <button class="control-btn" id="nextBtn">›</button>
+            </div>
+
+            <!-- Indicators -->
+            <div class="indicators" id="indicators">
+                <div class="indicator active" data-index="0"></div>
+                <div class="indicator" data-index="1"></div>
+                <div class="indicator" data-index="2"></div>
+                <div class="indicator" data-index="3"></div>
+                <div class="indicator" data-index="4"></div>
+                <div class="indicator" data-index="5"></div>
+                <div class="indicator" data-index="6"></div>
+                <div class="indicator" data-index="7"></div>
+                <div class="indicator" data-index="8"></div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="section-title">
-            <h2>Selected Projects</h2>
-        </div>
-        <div class="business-grid">
-            <div class="business-card">
-                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="Sales Dashboard" class="business-img">
-                <div class="business-content">
-                    <h3>Sales Dashboard & Forecasting</h3>
-                    <p>Built an interactive dashboard and implemented time-series forecasting to support merchandising decisions. Tools: Python, Pandas, Prophet, Tableau.</p>
-                    <a href="https://github.com/KatlegoMonama/sales-forecast" class="btn" target="_blank">View Repo</a>
-                </div>
-            </div>
-            <div class="business-card">
-                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981d" alt="Customer Segmentation" class="business-img">
-                <div class="business-content">
-                    <h3>Customer Segmentation</h3>
-                    <p>Performed clustering and LTV analysis to identify high-value customer segments and recommend targeted marketing strategies.</p>
-                    <a href="https://github.com/KatlegoMonama/customer-segmentation" class="btn" target="_blank">View Repo</a>
-                </div>
-            </div>
-            <div class="business-card">
-                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="A/B Testing" class="business-img">
-                <div class="business-content">
-                    <h3>A/B Testing Framework</h3>
-                    <p>Implemented statistical testing and experiment tracking to measure feature impact and improve conversion metrics.</p>
-                    <a href="https://github.com/KatlegoMonama/ab-testing" class="btn" target="_blank">View Repo</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="dev">
-        <div class="section-title">
-            <h2>Skills & Tools</h2>
-        </div>
-        <div class="skills-container">
-            <div class="skill-category">
-                <h3>Data & Analysis</h3>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Python (Pandas, NumPy)</span>
-                        <span>95%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 95%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>SQL</span>
-                        <span>92%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 92%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Statistics & Experimentation</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 90%"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Visualization & BI</h3>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Tableau / Power BI</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 90%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Matplotlib / Seaborn</span>
-                        <span>88%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 88%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Data Engineering (ETL)</span>
-                        <span>80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 80%"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Machine Learning & Tools</h3>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>scikit-learn</span>
-                        <span>82%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 82%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Cloud & Databases</span>
-                        <span>75%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 75%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Git & Reproducibility</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 85%"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Books Section -->
-    <section id="books">
-        <div class="section-title">
-            <h2>Books</h2>
-        </div>
-        <div class="books-container">
-            <div class="book-card">
-                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Book Cover" class="book-cover">
-                <div class="book-info">
-                    <h3>Data-Driven Decisions</h3>
-                    <p>A practical guide to business analytics for entrepreneurs and managers.</p>
-                    <span class="book-price">$14.99</span>
-                    <button class="btn purchase-btn" data-product="Data-Driven Decisions">Purchase</button>
-                </div>
-            </div>
-            <div class="book-card">
-                <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Book Cover" class="book-cover">
-                <div class="book-info">
-                    <h3>The Coding Mindset</h3>
-                    <p>Developing problem-solving skills for modern web development.</p>
-                    <span class="book-price">$12.99</span>
-                    <button class="btn purchase-btn" data-product="The Coding Mindset">Purchase</button>
-                </div>
-            </div>
-            <div class="book-card">
-                <img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Book Cover" class="book-cover">
-                <div class="book-info">
-                    <h3>Recommended Reads</h3>
-                    <p>Curated collection of books that shaped my thinking and career.</p>
-                    <a href="#" class="btn">View List</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Music Section -->
-    <section id="music">
-        <div class="section-title">
-            <h2>Music Projects</h2>
-        </div>
-        <div class="music-container">
-            <div class="music-card">
-                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Album Cover" class="music-cover">
-                <div class="music-info">
-                    <h3>Urban Echoes</h3>
-                    <p>My latest EP blending electronic and soul influences.</p>
-                    <audio controls class="audio-player">
-                        <source src="#" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <button class="btn purchase-btn" data-product="Urban Echoes EP">Purchase</button>
-                </div>
-            </div>
-            <div class="music-card">
-                <img src="https://images.unsplash.com/photo-1496293455970-f8581aae0e3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Album Cover" class="music-cover">
-                <div class="music-info">
-                    <h3>Current Playlist</h3>
-                    <p>Songs I'm currently listening to and recommend.</p>
-                    <audio controls class="audio-player">
-                        <source src="#" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <a href="#" class="btn">View Playlist</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Beats Section -->
-    <section id="beats">
-        <div class="section-title">
-            <h2>Beats & Instrumentals</h2>
-        </div>
-        <div class="music-container">
-            <div class="music-card">
-                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Beat Cover" class="music-cover">
-                <div class="music-info">
-                    <h3>Hip-Hop Collection</h3>
-                    <p>Premium hip-hop beats available for licensing.</p>
-                    <audio controls class="audio-player">
-                        <source src="#" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <button class="btn purchase-btn" data-product="Hip-Hop Beats">Purchase</button>
-                </div>
-            </div>
-            <div class="music-card">
-                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Beat Cover" class="music-cover">
-                <div class="music-info">
-                    <h3>Electronic Pack</h3>
-                    <p>EDM and electronic instrumentals for your projects.</p>
-                    <audio controls class="audio-player">
-                        <source src="#" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <button class="btn purchase-btn" data-product="Electronic Beats">Purchase</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Section -->
-    <section id="video">
-        <div class="section-title">
-            <h2>Video Projects</h2>
-        </div>
-        <div class="video-container">
-            <div class="video-card">
-                <div class="video-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1558008258-3256797b43f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail">
-                    <div class="play-button">
-                        <i class="fas fa-play"></i>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <h3>Business Analytics Tutorials</h3>
-                    <p>Educational series on data analysis and business intelligence techniques & leveraging AI tools.</p>
-                    <a href="#" class="btn">Watch Series</a>
-                </div>
-            </div>
-            <div class="video-card">
-                <div class="video-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail">
-                    <div class="play-button">
-                        <i class="fas fa-play"></i>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <h3>Coding Walkthroughs</h3>
-                    <p>Live coding sessions and project breakdowns.</p>
-                    <a href="#" class="btn">View Channel</a>
-                </div>
-            </div>
-            <div class="video-card">
-                <div class="video-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail">
-                    <div class="play-button">
-                        <i class="fas fa-play"></i>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <h3>Music Videos</h3>
-                    <p>Visual creations to accompany my musical projects.</p>
-                    <a href="#" class="btn">Watch Playlist</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Me Section -->
-    <section id="about">
-        <div class="section-title">
-            <h2>About Me</h2>
-        </div>
-        <div class="about-container">
-            <div class="about-img">
-                <img src="KatlegoMonamaPicture.png" alt="Katlego Monama">
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-container reveal">
+            <div class="about-image">
+                <img src="images/golddxygraph.PNG" alt="Photographer">
             </div>
             <div class="about-content">
-                <h3>Multidisciplinary Creator</h3>
-                <p>I'm Katlego Monama, a business analyst, developer, author, and creative based in South Africa. With over 10 years of experience across multiple disciplines, I bring a unique perspective to every project I undertake.</p>
-                <p>My approach combines analytical rigor with creative problem-solving, allowing me to develop innovative solutions that drive real business results while satisfying creative impulses.</p>
-                <p>When I'm not working on client projects, you can find me writing, producing music, or developing new digital products that bridge gaps between technology and creative expression.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-spotify"></i></a>
+                <h2>AUTREND</h2>
+                <h3>Seasonal Analysis (12-Month Trend) Correlation of Gold & DXY Dollar</h3>
+                <p><a href="AUTREND.pdf"class="cta-button"> Download </a> <a href=""class="cta-button" style=" background-color: blue; "> GITHUB </a> <a href=""class="cta-button" style=" background-color:yellowgreen; "> SLIDE DECK</a><br> Q1 (January – March) <br>
+                    ⭐⭐⭐⭐⭐ BEST QUARTER <br>
+                    Historically the strongest quarter for gold. January is frequently the best-performing month due to:<br>
+                    Chinese New Year demand. Institutional portfolio reallocation.<br>
+                     New-year investment inflows. Studies of long-term seasonality consistently identify January as one of gold's strongest months.<br>
+                    Trading Bias: Bullish</p>
+                    <p>  
+                    Q2 (April – June) <br>
+                    ⭐⭐⭐ Moderate <br>
+                    Characteristics: Consolidation phase. Profit-taking after Q1 rally.<br>
+                    Mixed performance. April often remains supportive, <br>
+                    but June is frequently among the weakest months historically.<br>
+                    Trading Bias: Range-bound</p>
+                    <p>
+                    Q3 (July – September) <br>
+                    ⭐⭐ Weakest Quarter <br>
+                    Characteristics: Summer liquidity decline. Reduced institutional participation. <br> 
+                    Higher probability of false breakouts.<br>
+                    Multiple seasonality studies identify July and September among the weakest months for gold performance.<br>
+                    Trading Bias: Cautious</p>
+                    <p>
+                    Q4 (October – December) <br>
+                    ⭐⭐⭐⭐ Strong <br>
+                    Drivers: Indian wedding season demand, Central bank reserve accumulation, Year-end portfolio rebalancing.<br>
+                    Historically Q4 ranks as the second-strongest quarter after Q1.<br>
+                    Trading Bias: Bullish</p>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">4'785.67</div>
+                        <div class="stat-label">Peak</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30</div>
+                        <div class="stat-label">AVG Volitilty</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Q1</div>
+                        <div class="stat-label">Best Quarter</div>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="services-container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Services Offered</h2>
+                <p class="section-subtitle">Professional Data Analysis services tailored to provide solutions </p>
+            </div>
+
+            <div class="services-grid reveal">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C10.34 2 9 3.34 9 5C9 6.66 10.34 8 12 8C13.66 8 15 6.66 15 5C15 3.34 13.66 2 12 2ZM12 9C8.69 9 6 11.69 6 15C6 16.66 6.56 18.17 7.5 19.32V22L12 20L16.5 22V19.32C17.44 18.17 18 16.66 18 15C18 11.69 15.31 9 12 9Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Business & Strategy Consulting</h3>
+                    <p class="service-description"> <strong> Growth Blueprints:</strong> Business planning, market research, and financial modeling.</p>
+                    <p class="service-description"><strong>Investor Readiness:</strong> CV/Linkedin optimization, GitHub portfolio setup, and pitch deck refinement.</p>
+                    <p class="service-description"><strong>Tech Advisory:</strong> Implementing the latest AI tools and research to keep you ahead of the curve.</p>
+                    <div class="service-price">Custom Pricing</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 6.5C12 5.67 11.33 5 10.5 5S9 5.67 9 6.5 9.67 8 10.5 8 12 7.33 12 6.5M13.5 5C12.67 5 12 5.67 12 6.5S12.67 8 13.5 8 15 7.33 15 6.5 14.33 5 13.5 5M12 21.35L5.35 14.7C3.58 12.93 2.61 10.54 2.61 8.04C2.61 3.74 6.05 0.25 10.36 0.21C14.72 0.17 18.29 3.69 18.29 8C18.29 10.53 17.34 12.88 15.58 14.65L12 21.35Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Data & Automation Engineering</h3>
+                    <p class="service-description"><strong>End-to-End Pipelines:</strong> ETL services and cloud architectur(AWS/AZURE/GCP).</p>
+                    <p class="service-description"><strong>Actionable Insights:</strong> Custom dashboards, automated reporting, and business intelligence.</p>
+                    <p class="service-description"><strong>Excel Automation:</strong> Turning manual spreadsheets into dynamic, self-updating systems.</p>
+                    <div class="service-price">Custom Pricing</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 3H14.82C14.4 1.84 13.3 1 12 1S9.6 1.84 9.18 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM12 3C12.55 3 13 3.45 13 4S12.55 5 12 5 11 4.55 11 4 11.45 3 12 3ZM12 18L8 14H11V9H13V14H16L12 18Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Digital Presence & Design</h3>
+                    <p class="service-description"><strong>Branding Identity:</strong> End-to-End solutions for digital solopreneurs.</p>
+                    <p class="service-description"><strong>User Experience(UI|UX):</strong> Human-centered design that converts visitors into customers.</p>
+                    <p class="service-description"><strong>Multimedia:</strong> Interactive content that tells your story.</p>
+                    <div class="service-price">Custom Pricing</div>
+                </div>
+
+             
+
+               
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <div class="section-title">
-            <h2>Get In Touch</h2>
-        </div>
+    <section class="contact-section" id="contact">
         <div class="contact-container">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="contact-text">
-                        <h3>Email</h3>
-                        <a href="mailto:Kevinmonama24@gmail.com">Kevinmonama24@gmail.com</a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div class="contact-text">
-                        <h3>Phone</h3>
-                        <a href="tel:+27683503416">+27 68 350 3416</a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="contact-text">
-                        <h3>Location</h3>
-                        <p>Johannesburg, South Africa</p>
-                    </div>
-                </div>
+            <div class="section-header reveal">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's create something beautiful together</p>
             </div>
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" class="form-control" required>
+
+            <div class="contact-info reveal">
+                <a href="mailto:kevinmonama012@gmail.com" class="contact-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+                        </svg>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" class="form-control" required>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value">Kevinmonama012@gmail.com</div>
+                </a>
+
+                <a href="tel:+1234567890" class="contact-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z"/>
+                        </svg>
                     </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" class="form-control" required>
+                    <div class="contact-label">Phone</div>
+                    <div class="contact-value">+27(825)-582-343</div>
+                </a>
+
+                <a href="https://maps.google.com/?q=New+York+USA" target="_blank" rel="noopener" class="contact-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5S14.5 7.62 14.5 9S13.38 11.5 12 11.5Z"/>
+                        </svg>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" class="form-control" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
+                    <div class="contact-label">Studio</div>
+                    <div class="contact-value">Pretoria, RSA</div>
+                </a>
             </div>
         </div>
     </section>
@@ -1213,184 +465,24 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-column">
-                <h3>About</h3>
-                <p>Katlego Monama is a multidisciplinary professional offering business analytics, development, and creative services.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/katlegoMonama/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2C22 19.4 19.4 22 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2M7.6 4C5.61 4 4 5.61 4 7.6V16.4C4 18.39 5.61 20 7.6 20H16.4C18.39 20 20 18.39 20 16.4V7.6C20 5.61 18.39 4 16.4 4H7.6M17.25 5.5C17.94 5.5 18.5 6.06 18.5 6.75S17.94 8 17.25 8S16 7.44 16 6.75S16.56 5.5 17.25 5.5M12 7C14.76 7 17 9.24 17 12S14.76 17 12 17S7 14.76 7 12S9.24 7 12 7M12 9C10.34 9 9 10.34 9 12S10.34 15 12 15S15 13.66 15 12S13.66 9 12 9Z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/katlegoMonama/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 3C19.55 3 20.05 3.21 20.41 3.59C20.79 3.95 21 4.45 21 5V19C21 19.55 20.79 20.05 20.41 20.41C20.05 20.79 19.55 21 19 21H5C4.45 21 3.95 20.79 3.59 20.41C3.21 20.05 3 19.55 3 19V5C3 4.45 3.21 3.95 3.59 3.59C3.95 3.21 4.45 3 5 3H19M18.5 18.5V13.2C18.5 11.87 17.45 10.82 16.12 10.82C15.21 10.82 14.46 11.37 14.17 12.15V11H11.5V18.5H14.17V13.57C14.17 12.82 14.79 12.2 15.54 12.2C16.29 12.2 16.91 12.82 16.91 13.57V18.5H18.5M6.88 9.57C7.63 9.57 8.25 8.96 8.25 8.21C8.25 7.46 7.63 6.84 6.88 6.84C6.13 6.84 5.5 7.46 5.5 8.21C5.5 8.96 6.13 9.57 6.88 9.57M8.21 18.5V11H5.5V18.5H8.21Z"/>
+                    </svg>
+                </a>
             </div>
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="#business">Business</a></li>
-                    <li><a href="#dev">Dev Code</a></li>
-                    <li><a href="#books">Books</a></li>
-                    <li><a href="#music">Music</a></li>
-                    <li><a href="#beats">Beats</a></li>
-                    <li><a href="#video">Video</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Resources</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Tutorials</a></li>
-                    <li><a href="#">Free Resources</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Newsletter</h3>
-                <p>Subscribe to get updates on new projects, releases, and articles.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Your Email" class="newsletter-input" required>
-                    <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
-                </form>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; <span id="year"></span> Katlego Monama. All rights reserved.</p>
+            <p class="footer-text">
+                © 2026 AUTREND INTELLIGENCE. All rights reserved.<br>
+                Join: <a href="https://autrend.com" target="_blank" rel="noopener">AUTREND</a>
+            </p>
         </div>
     </footer>
-
-    <!-- Purchase Modal -->
-    <div id="purchaseModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2 id="modalTitle">Purchase <span id="productName"></span></h2>
-            <p>Choose your preferred payment method:</p>
-            <div class="payment-options">
-                <button class="payment-btn paypal" id="paypalBtn"><i class="fab fa-paypal"></i> PayPal</button>
-                <button class="payment-btn kdp" id="kdpBtn"><i class="fab fa-amazon"></i> Amazon KDP</button>
-            </div>
-            <div id="paymentForm" style="display: none;">
-                <form id="checkoutForm">
-                    <div class="form-group">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="emailAddress">Email Address</label>
-                        <input type="email" id="emailAddress" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="paymentAmount">Amount ($)</label>
-                        <input type="number" id="paymentAmount" class="form-control" required>
-                    </div>
-                    <button type="submit" class="btn">Complete Purchase</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Mobile Navigation
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    hamburger.classList.remove('active');
-                }
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Sticky header on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            header.classList.toggle('sticky', window.scrollY > 0);
-        });
-        
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-        
-        // Purchase modal functionality
-        const purchaseButtons = document.querySelectorAll('.purchase-btn');
-        const modal = document.getElementById('purchaseModal');
-        const closeModal = document.querySelector('.close-modal');
-        const productName = document.getElementById('productName');
-        const paymentForm = document.getElementById('paymentForm');
-        const paypalBtn = document.getElementById('paypalBtn');
-        const kdpBtn = document.getElementById('kdpBtn');
-        
-        purchaseButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                modal.style.display = 'block';
-                productName.textContent = button.getAttribute('data-product');
-                paymentForm.style.display = 'none';
-            });
-        });
-        
-        closeModal.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-        
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-        
-        paypalBtn.addEventListener('click', () => {
-            paymentForm.style.display = 'block';
-            // In a real implementation, you would integrate PayPal SDK here
-        });
-        
-        kdpBtn.addEventListener('click', () => {
-            // Redirect to Amazon KDP page
-            window.open('https://www.amazon.com/Kindle-Direct-Publishing/b?ie=UTF8&node=133140011');
-        });
-        
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // In a real implementation, you would send the form data to a server
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
-        });
-        
-        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // In a real implementation, you would process the payment
-            alert('Payment processed successfully! Thank you for your purchase.');
-            modal.style.display = 'none';
-            this.reset();
-        });
-        
-        // Newsletter form
-        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input').value;
-            // In a real implementation, you would subscribe the email to your newsletter service
-            alert('Thank you for subscribing to our newsletter!');
-            this.reset();
-        });
-        
-        // Video play button
-        document.querySelectorAll('.play-button').forEach(button => {
-            button.addEventListener('click', () => {
-                // In a real implementation, this would open a video player or modal
-                alert('Video playback would start here.');
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
